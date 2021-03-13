@@ -17,8 +17,9 @@ to what is generally available in current industrial languages.
 
 ##### puke does not aim to excel at
 
-* data structures
-* CLI applications
+* building your own data structures
+* intensive numerical processing
+* short-lived CLI applications
 * embedded programming
 
 ##### ideas that may or may not lead to puke
