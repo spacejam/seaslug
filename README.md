@@ -30,7 +30,7 @@ to what is generally available in current industrial languages.
   * aims to maximize utilization while minimizing saturation (writes before reads before accepts for sockets)
   * infers contention causality encountered in the optimistic state layer and learns to step in as 
     a traffic director, letting users avoid thinking about contention
-* included data structures
+* rich built-in data structures, first-class json support, first-class binary parsing support
 
 ##### puke does not aim to excel at
 
@@ -44,3 +44,9 @@ to what is generally available in current industrial languages.
 * simdjson
 * sled
 * software transactional memory
+
+##### puke should be an ideal language for building
+
+* databases
+* distributed systems
+* multitenant infrastructure
