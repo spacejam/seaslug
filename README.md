@@ -7,7 +7,8 @@ with enforced strict error handling and built-in fault injection.
 puke may become a language that encourages users to write
 code that is usable by others and respectful to themselves
 by providing superior scheduling and concurrency facilities
-to what is generally available in current industrial languages.
+compared to what is generally available in current industrial
+languages.
 
 ##### puke should be an ideal language for building
 
