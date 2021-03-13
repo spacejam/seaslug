@@ -23,10 +23,14 @@ to what is generally available in current industrial languages.
 * testability
   * built-in network simulation, fail-points, concurrent interleaving exploration, model-based testing support
 * optimistic concurrency
-  * shared mutable state regulated by optimistic software transactional memory
+  * shared mutable state regulated by optimistic software transactional memory, letting users avoid
+    thinking about data races
 * scheduling
   * the runtime tracks overall utilization and saturation
   * aims to maximize utilization while minimizing saturation (writes before reads before accepts for sockets)
+  * infers contention causality encountered in the optimistic state layer and learns to step in as 
+    a traffic director, letting users avoid thinking about contention
+* included data structures
 
 ##### puke does not aim to excel at
 
