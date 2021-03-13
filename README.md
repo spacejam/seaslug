@@ -9,6 +9,18 @@ code that is usable by others and respectful to themselves
 by providing superior scheduling and concurrency facilities
 to what is generally available in current industrial languages.
 
+##### puke should be an ideal language for building
+
+* databases
+* distributed systems
+* multitenant infrastructure
+
+##### puke does not aim to excel at
+
+* data structures
+* CLI applications
+* embedded programming
+
 ##### ideas that may or may not lead to puke
 
 * erlang's terseness, focus on immutable message passing, explicit supervisor hierarchies, pattern matching
@@ -32,12 +44,6 @@ to what is generally available in current industrial languages.
     a traffic director, letting users avoid thinking about contention
 * rich built-in data structures, first-class json support, first-class binary parsing support
 
-##### puke does not aim to excel at
-
-* data structures
-* CLI applications
-* embedded programming
-
 ##### puke is written in rust and takes advantage of things like
 
 * io_uring
@@ -45,8 +51,4 @@ to what is generally available in current industrial languages.
 * sled
 * software transactional memory
 
-##### puke should be an ideal language for building
 
-* databases
-* distributed systems
-* multitenant infrastructure
