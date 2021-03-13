@@ -12,6 +12,7 @@ to what is generally available in current industrial languages.
 ##### ideas that may or may not lead to puke
 
 * erlang's terseness, explicit supervisor hierarchies, pattern matching
+* celf's nondeterministic planning 
 * prolog's declarative debugging, tables, provability of pure code
 * total functional programming
 * unison's effect systems
@@ -37,3 +38,5 @@ to what is generally available in current industrial languages.
 
 * io_uring
 * simdjson
+* sled
+* software transactional memory
