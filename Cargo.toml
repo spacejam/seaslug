@@ -1,0 +1,11 @@
+[package]
+name = "puke"
+version = "0.0.0"
+authors = ["Tyler Neely <t@jujit.su>"]
+edition = "2018"
+description = "experimental language with a focus on terseness, testability, high quality scheduling and completion-based IO"
+license = "GPL-2.0"
+homepage = "https://github.com/spacejam/puke"
+repository = "https://github.com/spacejam/puke"
+
+[dependencies]
