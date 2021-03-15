@@ -10,7 +10,7 @@ small, beautiful, knowable, DOESN'T EXIST YET LOL
   * infers contention causality encountered in the optimistic state layer and learns to step in as
     a traffic director, letting users avoid thinking about contention
 * leans into linear logic to enforce error handling in well-specified hierarchies, similar to Erlang supervisors
-* interpreter-first, but the interpreter itself aims to compile quickly so you can produce static optimized native binaries
+* interpreter-first, but the interpreter itself aims to compile quickly so you can produce static optimized native binaries (something something Futamura something...)
 * built-in first-class fault injection, fuzzing, network simulation, model-based testing, and concurrent interleaving exploration
 * rich built-in data structures, first-class json support, first-class binary parsing support
 
