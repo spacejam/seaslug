@@ -1,3 +1,6 @@
+use puke::{Args, Interpreter};
+
 fn main() {
-    println!("Hello, world!");
+    let args = Args::parse();
+    Interpreter::run(args);
 }

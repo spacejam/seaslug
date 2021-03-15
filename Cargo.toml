@@ -1,5 +1,5 @@
 [package]
-name = "puke"
+name = "seaslug"
 version = "0.0.0"
 authors = ["Tyler Neely <t@jujit.su>"]
 edition = "2018"
@@ -9,3 +9,10 @@ homepage = "https://github.com/spacejam/puke"
 repository = "https://github.com/spacejam/puke"
 
 [dependencies]
+lalrpop-util = "0.19.5"
+regex = "1.4.4"
+libc = "0.2.88"
+num_cpus = "1.13.0"
+
+[build-dependencies]
+lalrpop = "0.19.5"
