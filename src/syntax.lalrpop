@@ -1,0 +1,64 @@
+use std::str::FromStr;
+use crate::ast;
+
+grammar;
+
+
+pub SubFunction: ast::SubFunction = <id:Id> "(" <args: CommaSeparated<Field>> ")" "->" <ret:Id> => {
+  ast::SubFunction {
+    name: String::from(id),
+    arguments: args,
+    ret: ast::Type,
+    statements: Vec::new(),
+  }
+};
+
+
+pub Statement: ast::Statement = {
+  r"1010101aaaaa" => ast::Statement::Expression(ast::Expression::Case),
+};
+pub Var: String = r"[A-Z][A-Za-z0-9]*" => String::from(<>);
+pub Id: String = r"[a-z][a-zA-Z0-9]*" => String::from(<>);
+pub Field: ast::Field = <var:Var> ":" <ty:Id> => ast::Field { name: var, ty: ast::Type };
+
+// Comment: () = "%" r".*";
+
+CommaSeparated<T>: Vec<T> = {
+    <v:(<T> ",")*> <e:T?> => match e {
+        None => v,
+        Some(e) => {
+            let mut v = v;
+            v.push(e);
+            v
+        }
+    }
+};
+
+
+// Module: Vec<ast::Function> = PeriodSeparated<Function>;
+//
+// Function: ast::Function = SemicolonSeparated<SubFunction>;
+//
+// // separates function cases
+// SemicolonSeparated<T>: Vec<T> = {
+//     <v:(<T> ";")*> <e:T?> => match e {
+//         None => v,
+//         Some(e) => {
+//             let mut v = v;
+//             v.push(e);
+//             v
+//         }
+//     }
+// };
+//
+// // every function ends with a period
+// PeriodSeparated<T>: Vec<T> = {
+//     <v:(<T> ".")*> <e:T?> => match e {
+//         None => v,
+//         Some(e) => {
+//             let mut v = v;
+//             v.push(e);
+//             v
+//         }
+//     }
+// };
