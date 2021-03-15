@@ -1,4 +1,4 @@
-use puke::{Args, Interpreter};
+use seaslug::{Args, Interpreter};
 
 fn main() {
     let args = Args::parse();

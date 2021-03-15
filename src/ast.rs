@@ -1,16 +1,16 @@
 pub struct Module {
-    behavior: Behavior,
-    items: Vec<Item>,
+    pub behavior: Behavior,
+    pub items: Vec<Item>,
 }
 
 pub struct Struct {
-    name: String,
-    fields: Vec<Field>,
+    pub name: String,
+    pub fields: Vec<Field>,
 }
 
 pub struct Enum {
-    name: String,
-    variants: Vec<Struct>,
+    pub name: String,
+    pub variants: Vec<Struct>,
 }
 
 pub struct Field {
@@ -21,15 +21,15 @@ pub struct Field {
 pub struct Type;
 
 pub struct Function {
-    subfunctions: Vec<SubFunction>,
+    pub subfunctions: Vec<SubFunction>,
 }
 
 pub struct SubFunction {
     // implicit arity in arguments length
-    name: String,
-    ret: Type,
-    arguments: Vec<Field>,
-    statements: Vec<Statement>,
+    pub name: String,
+    pub ret: Type,
+    pub arguments: Vec<Field>,
+    pub statements: Vec<Statement>,
 }
 
 pub enum Statement {
