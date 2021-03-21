@@ -27,8 +27,8 @@ small, knowable, locked-down pure code embedded in a high performance runtime, D
 
 ##### seaslug does not aim to excel at
 
-* building your own data structures (write this in Rust and use it from seaslug)
-* intensive numerical processing (write this in Rust and use it from seaslug)
+* building your own data structures (write this in Rust and use + test it from seaslug)
+* intensive numerical processing (write this in Rust and use + test it from seaslug)
 
 ##### motivation
 
