@@ -152,3 +152,13 @@ said, here are some of the bits of functionality that I am interested in:
 * simdjson
 * sled
 * software transactional memory
+
+##### resources I'm studying while experimenting with this
+
+* Frank Pfenning's lectures on [Bug Catching (CMU Spring 2021)](http://www.cs.cmu.edu/~15414/schedule.html) and [Linear Logic (CMU Spring 2012)](https://www.cs.cmu.edu/~fp/courses/15816-s12/schedule.html)
+* Robert Harper's Practical Foundations for Programming Languages, 2nd ed
+* Handbook of Model Checking - Edmund M. Clarke et al.
+* Logic for Concurrency and Synchronisation - Ruy J.G.B. de Queiroz
+* Programming Distributed Computing Systems - Carlos Varela
+* Program = Proof - Samuel Mimram
+* The Optimal Implementation of Functional Programming Languages - Andrea Asperti and Stefano Guerrini
