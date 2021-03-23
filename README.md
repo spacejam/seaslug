@@ -1,4 +1,4 @@
-# seaslug (née puke)
+# seaslug
 
 small, knowable, locked-down pure code embedded in a high performance runtime, DOESN'T EXIST YET LOL
 
