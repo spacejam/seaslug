@@ -1,3 +1,5 @@
+before reading about this, please [look at how awesome sea slugs are](https://www.google.com/search?q=sea slug&tbm=isch)
+
 # seaslug
 
 small, knowable, locked-down pure code embedded in a high performance runtime, DOESN'T EXIST YET LOL
