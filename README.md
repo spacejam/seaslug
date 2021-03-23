@@ -1,4 +1,4 @@
-before reading about this, please [look at how awesome sea slugs are](https://www.google.com/search?q=sea slug&tbm=isch)
+before reading about this, please [look at how awesome sea slugs are](https://www.google.com/search?q=sea%20slug&tbm=isch).
 
 # seaslug
 
