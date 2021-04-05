@@ -164,3 +164,4 @@ said, here are some of the bits of functionality that I am interested in:
 * Programming Distributed Computing Systems - Carlos Varela
 * Program = Proof - Samuel Mimram
 * The Optimal Implementation of Functional Programming Languages - Andrea Asperti and Stefano Guerrini
+* [A Fast Linear-Arithmetic Solver for DPLL(T)](http://leodemoura.github.io/files/cav06.pdf)
