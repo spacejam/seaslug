@@ -94,7 +94,7 @@ more and more through an interactive process.
   [CutEr](https://github.com/cuter-testing/cuter), and several high-quality
   property testing frameworks that have seen tremendous success in creating
   robust distributed systems.
-* [Ada SPARK](https://www.adacore.com/about-spark) combines functionality for
+* [Ada SPARK](https://docs.adacore.com/spark2014-docs/html/ug/en/source/subprogram_contracts.html) combines functionality for
   restricting language features that are expensive to verify with a built-in
   verification toolchain. Ada and SPARK have seen great success in the
   safety-critical domain due to several features that ultimately make the
