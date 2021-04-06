@@ -2,7 +2,11 @@ before reading about this, please [look at how awesome sea slugs are](https://ww
 
 # seaslug
 
-small, knowable, locked-down pure code embedded in a high performance runtime, DOESN'T EXIST YET LOL
+a language that emphasizes terse, resource conscious, safer conversations with kernels.
+
+read and write less code. test and specify more code.
+
+very much in the pre-prototype research stage.
 
 ##### workflow
 
@@ -13,16 +17,17 @@ small, knowable, locked-down pure code embedded in a high performance runtime, D
   network simulation, or concurrent interleaving functionality enabled
 1. the test system discovers and shrinks a counterexample input that causes the
   property to be violated
-1. add additional compile-time constraints, verified behind the scenes via z3
+1. add additional compile-time constraints, verified behind the scenes via Why3/z3
 1. repeat as appropriate
 1. deploy to production, where IO is facilitated through a high quality
   io_uring/IOCP-backed priority and resource saturation-aware runtime.
 
 ##### seaslug should be an ideal language for building
 
+* servers
 * databases
 * distributed systems
-* servers
+* low-resource systems
 * overlay networks
 * scalable concurrent systems
 * multitenant infrastructure
@@ -155,6 +160,7 @@ said, here are some of the bits of functionality that I am interested in:
 * simdjson
 * sled
 * software transactional memory
+* http3
 
 ##### resources I'm studying while experimenting with this
 
@@ -166,3 +172,4 @@ said, here are some of the bits of functionality that I am interested in:
 * Program = Proof - Samuel Mimram
 * The Optimal Implementation of Functional Programming Languages - Andrea Asperti and Stefano Guerrini
 * [A Fast Linear-Arithmetic Solver for DPLL(T)](http://leodemoura.github.io/files/cav06.pdf)
+* [Compiling Pattern Matching to Good Decision Trees](http://moscova.inria.fr/~maranget/papers/ml05e-maranget.pdf)
