@@ -13,6 +13,7 @@ lalrpop-util = "0.19.5"
 regex = "1.4.4"
 libc = "0.2.88"
 num_cpus = "1.13.0"
+quiche = "0.7.0"
 
 [build-dependencies]
 lalrpop = "0.19.5"
