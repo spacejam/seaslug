@@ -5,8 +5,8 @@ authors = ["Tyler Neely <t@jujit.su>"]
 edition = "2018"
 description = "experimental language with a focus on terseness, testability, high quality scheduling and completion-based IO"
 license = "GPL-2.0"
-homepage = "https://github.com/spacejam/puke"
-repository = "https://github.com/spacejam/puke"
+homepage = "https://github.com/spacejam/seaslug"
+repository = "https://github.com/spacejam/seaslug"
 
 [dependencies]
 lalrpop-util = "0.19.5"
@@ -14,6 +14,8 @@ regex = "1.4.4"
 libc = "0.2.88"
 num_cpus = "1.13.0"
 quiche = "0.7.0"
+sled = "0.34.6"
+simdjson = "0.0.1"
 
 [build-dependencies]
 lalrpop = "0.19.5"

@@ -1,36 +1,31 @@
-before reading about this, please [look at how awesome sea slugs are](https://www.google.com/search?q=sea%20slug&tbm=isch).
+before reading further, it is recommended that you [understand how awesome sea slugs are](https://www.google.com/search?q=sea%20slug&tbm=isch).
 
 # seaslug
 
-a language that emphasizes terse, resource conscious, safer conversations with kernels.
+A terse interpreted functional linear typed actor language for building low-defect performant stateful distributed systems.
+
+```
+module(my_http3_counter).
+behavior(h3).
+
+state(counter: u64).
+
+# expected handler cases for http 3.0
+on(state, data, connection, stream_id, body) ->
+  state.counter += 1,
+  h3.respond(state.counter),
+  state;
+on(state, _, _, _, _) ->
+  state.
+```
+
+##### some additional buzzwords for your enjoyment
+
+contracts, actors, software transactional memory, io_uring, interpreters and futamura projections, structure-aware fuzzing, reduced order model checking, discrete event simulation.
 
 read and write less code. test and specify more code.
 
 very much in the pre-prototype research stage.
-
-##### workflow
-
-1. play with some ideas in the repl
-1. write a program that uses minimal type or constraint specification
-1. write a simple property test
-1. check that property with the built-in model checking, fuzzing,
-  network simulation, or concurrent interleaving functionality enabled
-1. the test system discovers and shrinks a counterexample input that causes the
-  property to be violated
-1. add additional compile-time constraints, verified behind the scenes via Why3/z3
-1. repeat as appropriate
-1. deploy to production, where IO is facilitated through a high quality
-  io_uring/IOCP-backed priority and resource saturation-aware runtime.
-
-##### seaslug should be an ideal language for building
-
-* servers
-* databases
-* distributed systems
-* low-resource systems
-* overlay networks
-* scalable concurrent systems
-* multitenant infrastructure
 
 ##### seaslug does not aim to excel at
 
@@ -124,6 +119,7 @@ more and more through an interactive process.
 * [Constraint Handling Rules](https://en.wikipedia.org/wiki/Constraint_Handling_Rules)'s verification opportunities
 * Prolog's declarative debugging, tables, proof capabilities
 * Total Functional Programming's restrictions on recursion and looping
+* [ivy](https://github.com/microsoft/ivy/blob/master/examples/raft/raft_logs.ivy)
 
 ##### prospective features
 

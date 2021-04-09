@@ -1,0 +1,99 @@
+# Notes on wikipedia DPLL article
+
+DPLL improves over standard backtrack by using:
+* unit propagation - anything that evaluates to a single
+  unassigned literal can only be satisfied by setting the
+  literal to true. The unit is assigned to true, and then
+  removed from the entire tree, recursively causing cascades
+  of simplifications that avoid a large amount of search.
+* pure literal elimination - if a propositional variable
+  occurs with only one polarity in the formula, it is
+  called "pure". Pure literals can always be assigned in
+  a way that makes all clauses containing them true.
+  These clauses do not constrain the search anymore
+  and can be deleted.
+
+Unsatisfiability of a given partial assignment is detected
+if one clause becomes empty (all its variables have been
+assigned in a way that makes the coresponding literals
+false). Unsatisfiability of the complete formula can only be
+detected after exhaustive search.
+
+Satisfiability of the formula is detected either when all
+variables are assigned without generating the empty clause,
+or, in modern implementations, if all clauses are satisfied.
+
+# Notes on [A Fast Linear-Arithmetic Solver for DPLL(T)](http://leodemoura.github.io/files/cav06.pdf)
+
+Much of this is directly quoting from the paper.
+
+## 1. Introduction
+
+Tools specializing in the difference-logic branch
+of linear arithmetic tend to use graph algorithms.
+For general purpose linear arithmetic, 2006-era tools
+tended to rely either on Fourier-Motzkin elimination
+or Simplex methods. Fourier-Motzkin elimination causes
+explosions on several problems, so Simplex is generally
+preferred.
+
+Commonly, Simplex is integrated with the lazy DPLL technique
+by using incremental versions of Simplex, incrementally
+updating a tableau. Rows are added as DPLL proceeds,
+and removed when DPLL backtracks. This is a lot of
+bookkeeping effort, especially when backtracking
+involves pivoting, so we will go with a different approach.
+
+The approach in this paper relies on transforming the
+original formula F into an equisatisfiable F' s.t. the
+satisfiability of F' is decided by solving a series of
+problems of the form
+
+find x in R^n s.t. Ax = 0 and li <= xi <= ui for i=1..n
+  where
+    A is a fixed matrix
+    li and ui are bounds on xi that vary w/ each problem
+
+This form is easy for Simplex to solve. Section 4
+presents a variant of Simplex designed to be efficient
+in the DPLL(T) context. Section 5 shows how to extend
+it to problems w/ strict inequalities. Since A is fixed,
+no row is ever added or removed from the tableau, and
+backtracking is very cheap.
+
+## 2. Background
+
+T is a quantifier-free theory. A T-solver is a procedure
+for deciding whether a finite set of atoms of T is
+satisfiable. If F is a formula built by boolean combination
+of atoms of T, then the satisfiability of F can be decided
+by combining a boolean satisfiability solver and a T-solver.
+The DPLL(T) approach is an efficient method for such
+integrations that relies ont he DPLL procedure.
+
+### 2.1 Solvers for DPLL(T)
+
+A T-solver in the DPLL(T) framework maintains a state
+that represents the atoms already asserted. The T-solver
+must provide operations for updating the state by asserting
+new atoms, checking whether the state is consistent, and
+backtracking. The T-solver may also implement theory propagation
+which identifies atoms that are implied by the current state.
+(seems like forward and backward propagation of linear logic
+programming.) To interact w/ DPLL(T)'s search, the T-solver
+must produce explanations for conflicts and propagated atoms.
+
+In an inconsistent state S, an explanation is any inconsistent
+subset of the atoms asserted in S. An explanation for an
+implied atom, little gamma, is a subset, big gamma, of the
+asserted atoms s.t. big gamma entails little gamma. An
+explanation (big gamma) is minimal if no proper subset
+of (big gamma) is an explanation. It has been thoroughly
+shrunken.
+
+The solver is assumed initialized for a fixed formula F
+and we denote by A the set of atoms that occur in F. The
+set of atoms asserted so far is denoted by (little alpha).
+The solver also maintains a stack of checkpoints that mark
+consistent states to which the solver can backtrack. We
+assume that a T-solver implements the following API:
